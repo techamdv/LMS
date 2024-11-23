@@ -1,18 +1,129 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function downTimeEntry() {
+  const [staticEntryData, setStaticEntryData] = useState(
+    
+      [
+        {
+          "PlantName": "Linamar",
+          "Linename": "Cylinder Head",
+          "Machine_Name": "OP-70",
+          "Employee_Name": "v g",
+          "Partno": "46337773-OP70",
+          "Partname": "LCH-OP70",
+          "Downtime_Reason": "Energy Loss",
+          "Start_Time": "2024-08-22T11:17",
+          "End_Time": "2024-08-22T11:20",
+          "Others": "test",
+          "Created_Date": "8/22/2024",
+          "Edit": "<a href='javascript:...'>Edit</a>",
+          "Remove": "<button class='remove-btn'>Remove</button>"
+        },
+        {
+          "PlantName": "Linamar",
+          "Linename": "Cylinder Head",
+          "Machine_Name": "OP-70",
+          "Employee_Name": "v g",
+          "Partno": "46337773-OP70",
+          "Partname": "LCH-OP70",
+          "Downtime_Reason": "Die & Tool Loss",
+          "Start_Time": "2024-08-22T11:00",
+          "End_Time": "2024-08-22T00:13",
+          "Others": "bds",
+          "Created_Date": "8/22/2024",
+          "Edit": "<a href='javascript:...'>Edit</a>",
+          "Remove": "<button class='remove-btn'>Remove</button>"
+        },
+        {
+          "PlantName": "Linamar",
+          "Linename": "Cylinder Head",
+          "Machine_Name": "OP-70",
+          "Employee_Name": "v g",
+          "Partno": "46337773-OP70",
+          "Partname": "LCH-OP70",
+          "Downtime_Reason": "Yield Loss",
+          "Start_Time": "2024-08-22T11:00",
+          "End_Time": "2024-08-22T11:08",
+          "Others": "",
+          "Created_Date": "8/22/2024",
+          "Edit": "<a href='javascript:...'>Edit</a>",
+          "Remove": "<button class='remove-btn'>Remove</button>"
+        },
+        {
+          "PlantName": "Linamar",
+          "Linename": "Cylinder Head",
+          "Machine_Name": "OP-80",
+          "Employee_Name": "t d",
+          "Partno": "46337774-OP80",
+          "Partname": "LCH-OP80",
+          "Downtime_Reason": "Machine Fault",
+          "Start_Time": "2024-08-22T10:30",
+          "End_Time": "2024-08-22T10:50",
+          "Others": "urgent",
+          "Created_Date": "8/22/2024",
+          "Edit": "<a href='javascript:...'>Edit</a>",
+          "Remove": "<button class='remove-btn'>Remove</button>"
+        },
+        {
+          "PlantName": "Linamar",
+          "Linename": "Cylinder Head",
+          "Machine_Name": "OP-90",
+          "Employee_Name": "r p",
+          "Partno": "46337775-OP90",
+          "Partname": "LCH-OP90",
+          "Downtime_Reason": "Material Shortage",
+          "Start_Time": "2024-08-22T12:15",
+          "End_Time": "2024-08-22T12:45",
+          "Others": "test",
+          "Created_Date": "8/22/2024",
+          "Edit": "<a href='javascript:...'>Edit</a>",
+          "Remove": "<button class='remove-btn'>Remove</button>"
+        },
+        {
+          "PlantName": "Linamar",
+          "Linename": "Cylinder Head",
+          "Machine_Name": "OP-100",
+          "Employee_Name": "j h",
+          "Partno": "46337776-OP100",
+          "Partname": "LCH-OP100",
+          "Downtime_Reason": "Operator Error",
+          "Start_Time": "2024-08-22T09:30",
+          "End_Time": "2024-08-22T09:45",
+          "Others": "testing",
+          "Created_Date": "8/22/2024",
+          "Edit": "<a href='javascript:...'>Edit</a>",
+          "Remove": "<button class='remove-btn'>Remove</button>"
+        },
+        {
+          "PlantName": "Linamar",
+          "Linename": "Cylinder Head",
+          "Machine_Name": "OP-110",
+          "Employee_Name": "a j",
+          "Partno": "46337777-OP110",
+          "Partname": "LCH-OP110",
+          "Downtime_Reason": "Maintenance",
+          "Start_Time": "2024-08-22T13:05",
+          "End_Time": "2024-08-22T13:15",
+          "Others": "none",
+          "Created_Date": "8/22/2024",
+          "Edit": "<a href='javascript:...'>Edit</a>",
+          "Remove": "<button class='remove-btn'>Remove</button>"
+        }
+      ]   
+  )
+
   return (
     <>
         <main id="main" className="main">
       <div className="pagetitle">
-        <h1>Data Tables</h1>
-        <nav>
+        <h1>Down Time Entries</h1>
+        {/* <nav>
           <ol className="breadcrumb">
             <li className="breadcrumb-item"><a href="index.html">Home</a></li>
             <li className="breadcrumb-item">Tables</li>
             <li className="breadcrumb-item active">Data</li>
           </ol>
-        </nav>
+        </nav> */}
       </div>
 
       <section className="section">
@@ -24,151 +135,47 @@ function downTimeEntry() {
 
                 {/* Table with stripped rows */}
                 <table className="table datatable">
-                  <thead>
-                    <tr>
-                      <th>
-                        <b>N</b>ame
-                      </th>
-                      <th>Ext.</th>
-                      <th>City</th>
-                      <th data-type="date" data-format="YYYY/DD/MM">Start Date</th>
-                      <th>Completion</th>
-                    </tr>
-                  </thead>
+                <thead>
+    <tr>
+      <th><b>Plant Name</b></th>
+      <th><b>Line Name</b></th>
+      <th><b>Machine Name</b></th>
+      <th><b>Employee Name</b></th>
+      <th><b>Part No</b></th>
+      <th><b>Part Name</b></th>
+      <th><b>Downtime Reason</b></th>
+      <th><b>Start Time</b></th>
+      <th><b>End Time</b></th>
+      <th><b>Others</b></th>
+      <th><b>Created Date</b></th>
+      {/* <th><b>Edit</b></th>
+      <th><b>Remove</b></th> */}
+    </tr>
+  </thead>
                   <tbody>
-                    <tr>
-                      <td>Unity Pugh</td>
-                      <td>9958</td>
-                      <td>Curicó</td>
-                      <td>2005/02/11</td>
-                      <td>37%</td>
-                    </tr>
-                    <tr>
-                      <td>Theodore Duran</td>
-                      <td>8971</td>
-                      <td>Dhanbad</td>
-                      <td>1999/04/07</td>
-                      <td>97%</td>
-                    </tr>
-                    <tr>
-                      <td>Joshua Weiss</td>
-                      <td>2289</td>
-                      <td>Saint-Léonard</td>
-                      <td>2010/15/01</td>
-                      <td>52%</td>
-                    </tr>
-                    <tr>
-                      <td>Kiona Lowery</td>
-                      <td>5952</td>
-                      <td>Inuvik</td>
-                      <td>2002/17/12</td>
-                      <td>72%</td>
-                    </tr>
-                    <tr>
-                      <td>Nina Rush</td>
-                      <td>7567</td>
-                      <td>Bo‘lhe</td>
-                      <td>2008/27/01</td>
-                      <td>6%</td>
-                    </tr>
-                    <tr>
-                      <td>Palmer Parker</td>
-                      <td>2000</td>
-                      <td>Stade</td>
-                      <td>2012/24/07</td>
-                      <td>58%</td>
-                    </tr>
-                    <tr>
-                      <td>Vielka Olsen</td>
-                      <td>3745</td>
-                      <td>Vrasene</td>
-                      <td>2016/08/01</td>
-                      <td>70%</td>
-                    </tr>
-                    <tr>
-                      <td>Meghan Cunningham</td>
-                      <td>8604</td>
-                      <td>Söke</td>
-                      <td>2007/16/02</td>
-                      <td>59%</td>
-                    </tr>
-                    <tr>
-                      <td>Iola Shaw</td>
-                      <td>6447</td>
-                      <td>Albany</td>
-                      <td>2014/05/03</td>
-                      <td>88%</td>
-                    </tr>
-                    <tr>
-                      <td>Imelda Cole</td>
-                      <td>4564</td>
-                      <td>Haasdonk</td>
-                      <td>2007/16/11</td>
-                      <td>79%</td>
-                    </tr>
-                    <tr>
-                      <td>Jerry Beach</td>
-                      <td>6801</td>
-                      <td>Gattatico</td>
-                      <td>1999/07/07</td>
-                      <td>36%</td>
-                    </tr>
-                    <tr>
-                      <td>Garrett Rocha</td>
-                      <td>3938</td>
-                      <td>Gavorrano</td>
-                      <td>2000/06/08</td>
-                      <td>71%</td>
-                    </tr>
-                    <tr>
-                      <td>Derek Kerr</td>
-                      <td>1724</td>
-                      <td>Gualdo Cattaneo</td>
-                      <td>2014/21/01</td>
-                      <td>89%</td>
-                    </tr>
-                    <tr>
-                      <td>Shad Hudson</td>
-                      <td>5944</td>
-                      <td>Salamanca</td>
-                      <td>2014/10/12</td>
-                      <td>98%</td>
-                    </tr>
-                    <tr>
-                      <td>Daryl Ayers</td>
-                      <td>8276</td>
-                      <td>Barchi</td>
-                      <td>2012/12/11</td>
-                      <td>88%</td>
-                    </tr>
-                    <tr>
-                      <td>Caleb Livingston</td>
-                      <td>3094</td>
-                      <td>Fatehpur</td>
-                      <td>2014/13/02</td>
-                      <td>8%</td>
-                    </tr>
-                    <tr>
-                      <td>Sydney Meyer</td>
-                      <td>4576</td>
-                      <td>Neubrandenburg</td>
-                      <td>2015/06/02</td>
-                      <td>22%</td>
-                    </tr>
-                    <tr>
-                      <td>Shellie Murphy</td>
-                      <td>3845</td>
-                      <td>Marlborough</td>
-                      <td>2013/13/11</td>
-                      <td>72%</td>
-                    </tr>
-                    <tr>
-                      <td>Porter Nicholson</td>
-                      <td>4539</td>
-                      <td>Bismil</td>
-                      <td>2012/22/10</td>
-                      <td>23%</td>
-                    </tr>
+                    {
+                      staticEntryData.map(data => {
+                        return (
+                          <tr key={data.Partno}> {/* Use a unique key like Partno for better performance */}
+                            <td>{data.PlantName}</td>
+                            <td>{data.Linename}</td>
+                            <td>{data.Machine_Name}</td>
+                            <td>{data.Employee_Name}</td>
+                            <td>{data.Partno}</td>
+                            <td>{data.Partname}</td>
+                            <td>{data.Downtime_Reason}</td>
+                            <td>{data.Start_Time}</td>
+                            <td>{data.End_Time}</td>
+                            <td>{data.Others}</td>
+                            <td>{data.Created_Date}</td>
+                            {/* <td dangerouslySetInnerHTML={{ __html: data.Edit }}></td> Handle HTML for the Edit link */}
+                            {/* <td>{data.Remove}</td> Display the Remove button */}
+                          </tr>
+                        );
+                      })
+                    }
+                                       
+                    
                   </tbody>
                 </table>
                 {/* End Table with stripped rows */}
