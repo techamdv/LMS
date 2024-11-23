@@ -1,6 +1,9 @@
 import React from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
 function SiderBar() {
+
+    const navigate = useNavigate()
     return (
         <>
             {/* ======= Sidebar ======= */}
@@ -49,10 +52,10 @@ function SiderBar() {
                                 </a>
                             </li>
                             <li>
-                                <a href="forms-layouts.html">
+                                <Link to={"/downtime-entry"}>
                                     <i className="bi bi-circle" />
                                     <span>Downtime entry</span>
-                                </a>
+                                </Link>
                             </li>
                             <li>
                                 <a href="forms-editors.html">

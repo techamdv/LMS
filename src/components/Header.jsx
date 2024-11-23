@@ -1,14 +1,13 @@
 import React from 'react'
-
+import { Link, useNavigate } from 'react-router-dom'
 function Header() {
-    const hanldeToggle = ()=>{
+    const hanldeToggle = () => {
         const bodyHasToggleClass = document.body.classList.contains('toggle-sidebar');
-        if(bodyHasToggleClass)
-        {
+        if (bodyHasToggleClass) {
             document.body.classList.remove('toggle-sidebar');
-        }else{
+        } else {
             document.body.classList.add('toggle-sidebar');
-        }      
+        }
     }
 
     return (
@@ -16,11 +15,11 @@ function Header() {
             {/* ======= Header ======= */}
             <header id="header" className="header fixed-top d-flex align-items-center">
                 <div className="d-flex align-items-center justify-content-between">
-                    <a href="index.html" className="logo d-flex align-items-center">
+                    <Link to={"/"} className="logo d-flex align-items-center">
                         <img src="assets/img/logo.png" alt="" />
                         <span className="d-none d-lg-block">LMS</span>
-                    </a>
-                    <i className="bi bi-list toggle-sidebar-btn" onClick={hanldeToggle}/>
+                    </Link>
+                    <i className="bi bi-list toggle-sidebar-btn" onClick={hanldeToggle} />
                 </div>
                 {/* End Logo */}
                 <div className="search-bar">
