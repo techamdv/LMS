@@ -3,6 +3,8 @@ import Dashboard from "./components/Dashboard";
 import Header from './components/Header';
 import SiderBar from './components/SiderBar';
 import Footer from './components/Footer';
+import DownTimeEntry from './components/ProductionMaster/DownTimeEntry';
+
 
 function App() {
   return (
@@ -10,7 +12,9 @@ function App() {
       <Header />
       <SiderBar />
       <Dashboard />
+      <DownTimeEntry/>
       <Footer />
+      
 
     </>
   )
