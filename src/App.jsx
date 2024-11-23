@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import Dashboard from "./components/Dashboard";
-import Header from './components/Production Master/Header';
-import SiderBar from './components/Production Master/SiderBar';
-import Footer from './components/Production Master/Footer';
+import Header from './components/Header';
+import SiderBar from './components/SiderBar';
+import Footer from './components/Footer';
 
 function App() {
   return (
