@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 
 function Footer() {
     return (
         <>
             {/* ======= Footer ======= */}
-            <footer id="footer" className="footer">
+            <footer id="footer" className=" footer " >
                 <div className="copyright">
                     © Copyright{" "}
                     <strong>
@@ -22,7 +22,7 @@ function Footer() {
             </footer>
             {/* End Footer */}
         </>
-    )
+    );
 }
 
-export default Footer
+export default Footer;
