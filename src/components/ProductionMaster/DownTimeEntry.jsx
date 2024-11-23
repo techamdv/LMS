@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import Modal from './Modal'
 
 function downTimeEntry() {
+  const [modalBody, setModalBody] = useState(false)
+  const handleAddNewModalClick = () => {
+    setModalBody(false)
+  }
+  const handleAddReasonModalClick = () => {
+    setModalBody(true)
+  }
+
   return (
     <>
       <main id="main" className="main">
@@ -15,10 +23,25 @@ function downTimeEntry() {
             </ol>
           </nav>
         </div>
-        <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#verticalycentered" >
-          Add new
-        </button>
-        <Modal />
+
+        <div className="d-flex justify-content-between mb-2">
+          <button
+            type="button"
+            className="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#verticalycentered" onClick={handleAddNewModalClick}>
+            Add new
+          </button>
+          <button
+            type="button"
+            className="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#verticalycentered" onClick={handleAddReasonModalClick}>
+            Add Reason
+          </button>
+        </div>
+        <Modal flag={modalBody} />
+
         <section className="section">
           <div className="row">
             <div className="col-lg-12">
