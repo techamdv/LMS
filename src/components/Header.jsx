@@ -1,6 +1,16 @@
 import React from 'react'
 
 function Header() {
+    const hanldeToggle = ()=>{
+        const bodyHasToggleClass = document.body.classList.contains('toggle-sidebar');
+        if(bodyHasToggleClass)
+        {
+            document.body.classList.remove('toggle-sidebar');
+        }else{
+            document.body.classList.add('toggle-sidebar');
+        }      
+    }
+
     return (
         <>
             {/* ======= Header ======= */}
@@ -10,7 +20,7 @@ function Header() {
                         <img src="assets/img/logo.png" alt="" />
                         <span className="d-none d-lg-block">LMS</span>
                     </a>
-                    <i className="bi bi-list toggle-sidebar-btn" />
+                    <i className="bi bi-list toggle-sidebar-btn" onClick={hanldeToggle}/>
                 </div>
                 {/* End Logo */}
                 <div className="search-bar">
